@@ -1,0 +1,12 @@
+name: Omikuji
+author: ironingot.net
+website: ironingot.net 
+main: net.ironingot.omikuji.Omikuji
+version: 1.0
+commands:
+  omikuji:
+    usage: |
+      /<command>
+      Example: /<command> [draw] - Draw Omikuji!
+      Example: /<command> reload - Reload config.yml 
+    description: "Let's Omikuji!"

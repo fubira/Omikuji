@@ -1,0 +1,22 @@
+format: '&goldomikuji> &aqua%player% &whiteは &green[&yellow%result%&green]'
+elements:
+  大凶: 10
+  凶: 20
+  小凶: 20
+  末吉: 20
+  小吉: 20
+  吉: 20
+  中吉: 20
+  大吉: 10
+  だん吉: 5
+  ぴょん吉: 5
+  豚: 5
+  カボチャ: 5
+  TNT: 5
+  女神: 2
+  神: 2
+  紙: 2
+  Notch: 1
+  Jeb: 1
+  Herobrine: 1
+  Unknown: 1
