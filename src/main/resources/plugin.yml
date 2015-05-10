@@ -2,7 +2,7 @@ name: Omikuji
 author: ironingot.net
 website: ironingot.net 
 main: net.ironingot.omikuji.Omikuji
-version: 1.0
+version: 1.2
 commands:
   omikuji:
     usage: |
