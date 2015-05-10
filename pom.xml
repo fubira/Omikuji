@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>net.ironingot</groupId>
   <artifactId>Omikuji</artifactId>
-  <version>1.0</version>
+  <version>1.2</version>
   <name>Omikuji</name>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -11,18 +11,16 @@
 
   <repositories>
     <repository>
-      <id>bukkit-repo</id>
-      <url>http://repo.bukkit.org/content/groups/public</url>
+      <id>spigot-repo</id>
+      <url>https://hub.spigotmc.org/nexus/content/groups/public/</url>
     </repository>
   </repositories>
 
   <dependencies>
     <dependency>
-      <groupId>org.bukkit</groupId>
-      <artifactId>bukkit</artifactId>
-      <version>1.8-R0.1-SNAPSHOT</version>
-      <type>jar</type>
-      <scope>compile</scope>
+        <groupId>org.bukkit</groupId>
+        <artifactId>bukkit</artifactId>
+        <version>1.8.3-R0.1-SNAPSHOT</version>
     </dependency>
   </dependencies>
 
