@@ -85,6 +85,7 @@ public class OmikujiCommand implements CommandExecutor {
         String senderName = sender.getName();
         String arg = "draw";
         
+        
         if (args.length >= 1) {
             arg = args[0];
         }
@@ -101,6 +102,11 @@ public class OmikujiCommand implements CommandExecutor {
         } 
 
         if (arg.equals("reload")) {
+            if (!sender.isOp()) {
+                sender.sendMessage(ChatColor.RED + "* You don't have permission.");
+                return false;
+            }
+
             if (plugin.getConfigHandler().load()) {
                 sender.sendMessage(ChatColor.GOLD + "Config Reloaded.");
                 loadOmikujiBox();
