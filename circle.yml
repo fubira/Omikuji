@@ -1,0 +1,17 @@
+machine:
+  java:
+    version: oraclejdk8
+  timezone:
+    Asia/Tokyo
+
+dependencies:
+  override:
+    - ./gradlew dependencies
+
+  cache_directories:
+    - ~/.gradle
+    - ~/.m2
+
+test:
+  post:
+    - cp -R ./target/*.jar $CIRCLE_ARTIFACTS
