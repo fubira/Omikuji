@@ -5,11 +5,7 @@ machine:
     Asia/Tokyo
 
 dependencies:
-  override:
-    - ./gradlew dependencies
-
   cache_directories:
-    - ~/.gradle
     - ~/.m2
 
 test:
