@@ -4,6 +4,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 
 import java.util.Calendar;
 import java.util.Map;
@@ -82,19 +83,28 @@ public class OmikujiCommand implements CommandExecutor {
     }
 
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
-        String senderName = sender.getName();
+        Player senderPlayer = sender instanceof Player ? (Player) sender : null;
         String arg = "draw";
-        
+        String target = sender.getName();
+
         
         if (args.length >= 1) {
             arg = args[0];
         }
+        if (args.length >= 2) {
+            if (senderPlayer != null && senderPlayer.hasPermission("omikuji.command.draw.others")) {
+                target = args[1];
+            } else {
+                sender.sendMessage(ChatColor.RED + "* You don't have permission.");
+                return false;
+            }
+        }
 
         if (arg.equals("draw")) {
-            String result = omikujiBox.draw(generateDailySeed(senderName));
+            String result = omikujiBox.draw(generateDailySeed(target));
 
             HashMap<String, String> keywords = new HashMap<String, String>();
-            keywords.put("player", senderName);
+            keywords.put("player", target);
             keywords.put("result", result);
 
             plugin.getServer().broadcastMessage(buildText(keywords));
@@ -115,7 +125,7 @@ public class OmikujiCommand implements CommandExecutor {
             }
             return true;
         }
-        
+
         sender.sendMessage(ChatColor.GOLD + "Unknown command: '" + arg + "'");
         return true;
     }
