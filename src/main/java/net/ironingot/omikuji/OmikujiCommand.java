@@ -85,6 +85,7 @@ public class OmikujiCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
         Player senderPlayer = sender instanceof Player ? (Player) sender : null;
         String arg = "draw";
+        String drawer = sender.getName();
         String target = sender.getName();
 
         
@@ -106,6 +107,11 @@ public class OmikujiCommand implements CommandExecutor {
             HashMap<String, String> keywords = new HashMap<String, String>();
             keywords.put("player", target);
             keywords.put("result", result);
+            if (target != drawer) {
+                keywords.put("drawby", "by " + drawer);
+            } else {
+                keywords.put("drawby", "");
+            }
 
             plugin.getServer().broadcastMessage(buildText(keywords));
             return true;

@@ -1,4 +1,4 @@
-format: '&goldomikuji> &aqua%player% &whiteは &green[&yellow%result%&green]'
+format: '&gold[Omikuji] &aqua%player%&whiteは &green<&yellow%result%&green> &gray%drawby%'
 elements:
   大凶: 10
   凶: 20
