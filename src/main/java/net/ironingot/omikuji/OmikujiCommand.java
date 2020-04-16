@@ -93,7 +93,7 @@ public class OmikujiCommand implements CommandExecutor {
             arg = args[0];
         }
         if (args.length >= 2) {
-            if (senderPlayer != null && senderPlayer.hasPermission("omikuji.command.draw.others")) {
+            if (senderPlayer != null && (senderPlayer.hasPermission("omikuji.command.draw.others") || senderPlayer.isOp())) {
                 target = args[1];
             } else {
                 sender.sendMessage(ChatColor.RED + "* You don't have permission.");
